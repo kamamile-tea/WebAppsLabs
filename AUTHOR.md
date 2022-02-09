@@ -1,10 +1,10 @@
-#Hello my name is Kamille Tipan!
+# Hello my name is Kamille Tipan!
 
-##Major
-###Computer Science
+## Major
+### Computer Science
 
-##Career Interests
-###Software Development, Data Science
+## Career Interests
+### Software Development, Data Science
 
-##Hobbies
-###Biking, Exploring, Reading
+## Hobbies
+### Biking, Exploring, Reading

@@ -5,7 +5,7 @@ BEGIN{
 }
 
 {
-  print sort -n > "lab1/notfinalOutput.csv"
+  print sort -n > "lab_1/notfinalOutput.csv"
 }
 
 

@@ -1,6 +1,7 @@
+#creates the necessary table to clean up and finalize the appropraite ouput file
 BEGIN{
   FS = ","
-  print "Total" > "output.csv"
+  print "Total" > "lab1/output.csv"
 }
 
 {
@@ -12,7 +13,7 @@ BEGIN{
 }
 
 {
-  print $NF,$7,$4,$5,$6  > "output.csv"
+  print $NF,$7,$4,$5,$6  > "lab1/output.csv"
 }
 
 END{

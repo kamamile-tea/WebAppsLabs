@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS Judges;
 DROP TABLE IF EXISTS Cars;
 DROP TABLE IF EXISTS original;
 DROP TABLE IF EXISTS extract1;
+.headers off
 .mode csv
 .import lab_data/data.csv original
 
@@ -35,7 +36,7 @@ CREATE TABLE IF NOT EXISTS Car_Score AS SELECT Car_ID,Racer_Turbo,
 	Mods_WIP,Mods_Overall
 FROM original;
 
- 
+
 
 CREATE TABLE IF NOT EXISTS extract1 AS SELECT car_id,year,make,model,(
 	Racer_Turbo+
@@ -50,8 +51,12 @@ CREATE TABLE IF NOT EXISTS extract1 AS SELECT car_id,year,make,model,(
 	Mods_ICE+Mods_Aftermarket+
 	Mods_WIP+Mods_Overall) AS Total FROM original ORDER BY Total DESC;
 
+ALTER TABLE extract1 ADD COLUMN ranking TEXT;
+
+UPDATE extract1 SET ranking = rowid;
+
 .mode csv
+.headers ON
 .output extract1.csv
 SELECT * FROM extract1;
 .output stdout
-

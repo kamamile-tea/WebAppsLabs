@@ -1,14 +1,38 @@
-(20) statement aborts at 19: [INSERT INTO Cars SELECT car_id,year,make,model,timestamp FROM original;] datatype mismatch
-(1) near "cars": syntax error in "drop cars
-;"
-(1) near "Cars": syntax error in "DROP Cars;"
-(1) near "ls": syntax error in "ls
-;"
-(1) table Cars has 6 columns but 5 values were supplied in "INSERT INTO Cars SELECT car_id,year,make,model,timestamp FROM original;"
-(1) near "SELECT": syntax error in "CREATE TABLE Car_Score(SELECT Car_ID FROM Cars);"
-(1) near "SELECT": syntax error in "CREATE TABLE Car_Score SELECT Car_ID FROM Cars;"
-(1) no such table: Carss in "INSERT INTO Carss SELECT car_id,year,make,model,timestamp FROM original;"
-(1) near "(": syntax error in "CREATE TABLE carss AS (SELECT car_id FROM cars);"
-(1) near "(": syntax error in "CREATE TABLE carss AS(SELECT car_id FROM cars);"
-(1) near "carss": syntax error in "SELECT * carss;"
-(1) near "carss": syntax error in "SELECT * carss;"
+-- Kamille Tipan
+-- CISC 3140
+
+DROP TABLE IF EXISTS Judges;
+DROP TABLE IF EXISTS Cars;
+DROP TABLE IF EXISTS original;
+
+.mode csv
+.import lab_data/data.csv original
+
+CREATE TABLE IF NOT EXISTS Judges AS SELECT judge_id, judge_name FROM original;
+
+
+CREATE TABLE IF NOT EXISTS Cars(
+	Car_id TEXT NOT NULL PRIMARY KEY,
+	Year TEXT NOT NULL,
+	Make TEXT NOT NULL,
+	Model TEXT NOT NULL,
+	Email TEXT NOT NULL,
+	Timestamp TEXT NOT NULL);
+
+INSERT INTO Cars SELECT car_id,year,make,model,email,timestamp FROM original;
+
+
+CREATE TABLE IF NOT EXISTS Car_Score AS SELECT Car_ID,Racer_Turbo,
+	Racer_Supercharged,Racer_Performance,Racer_Horsepower,
+	Car_Overall,Engine_Modifications,Engine_Performance,
+	Engine_Chrome,Engine_Detailing,Engine_Cleanliness,
+	Body_Frame_Undercarriage,Body_Frame_Suspension,
+	Body_Frame_Chrome,Body_Frame_Detailing,
+	Body_Frame_Cleanliness,Mods_Paint,
+	Mods_Body,Mods_Wrap,Mods_Rims,
+	Mods_Interior,Mods_Other,
+	Mods_ICE,Mods_Aftermarket,
+	Mods_WIP,Mods_Overall 
+FROM original;
+
+ 

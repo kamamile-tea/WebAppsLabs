@@ -1,0 +1,7 @@
+## LAB 2
+to run as of now copy and paste the followoing into the terminal from the the lab2 folder
+
+sqlite3 cars.db
+.read cars.sql
+
+this will create everything so far.

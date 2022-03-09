@@ -49,3 +49,9 @@ CREATE TABLE IF NOT EXISTS extract1 AS SELECT car_id,year,make,model,(
 	Mods_Interior+Mods_Other+
 	Mods_ICE+Mods_Aftermarket+
 	Mods_WIP+Mods_Overall) AS Total FROM original ORDER BY Total DESC;
+
+.mode csv
+.output extract1.csv
+SELECT * FROM extract1;
+.output stdout
+

@@ -4,7 +4,7 @@
 DROP TABLE IF EXISTS Judges;
 DROP TABLE IF EXISTS Cars;
 DROP TABLE IF EXISTS original;
-
+DROP TABLE IF EXISTS extract1;
 .mode csv
 .import lab_data/data.csv original
 
@@ -32,7 +32,20 @@ CREATE TABLE IF NOT EXISTS Car_Score AS SELECT Car_ID,Racer_Turbo,
 	Mods_Body,Mods_Wrap,Mods_Rims,
 	Mods_Interior,Mods_Other,
 	Mods_ICE,Mods_Aftermarket,
-	Mods_WIP,Mods_Overall 
+	Mods_WIP,Mods_Overall
 FROM original;
 
  
+
+CREATE TABLE IF NOT EXISTS extract1 AS SELECT car_id,year,make,model,(
+	Racer_Turbo+
+	Racer_Supercharged+Racer_Performance+Racer_Horsepower+
+	Car_Overall+Engine_Modifications+Engine_Performance+
+	Engine_Chrome+Engine_Detailing+Engine_Cleanliness+
+	Body_Frame_Undercarriage+Body_Frame_Suspension+
+	Body_Frame_Chrome+Body_Frame_Detailing+
+	Body_Frame_Cleanliness+Mods_Paint+
+	Mods_Body+Mods_Wrap+Mods_Rims+
+	Mods_Interior+Mods_Other+
+	Mods_ICE+Mods_Aftermarket+
+	Mods_WIP+Mods_Overall) AS Total FROM original ORDER BY Total DESC;

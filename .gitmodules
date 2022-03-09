@@ -4,3 +4,9 @@
 [submodule "d66a59b6db4e59c16efd4c42ad411f8e"]
 	path = d66a59b6db4e59c16efd4c42ad411f8e
 	url = https://gist.github.com/d66a59b6db4e59c16efd4c42ad411f8e.git
+[submodule "lab2/d66a59b6db4e59c16efd4c42ad411f8e"]
+	path = lab2/d66a59b6db4e59c16efd4c42ad411f8e
+	url = https://gist.github.com/d66a59b6db4e59c16efd4c42ad411f8e.git
+[submodule "lab2/lab_data"]
+	path = lab2/lab_data
+	url = https://gist.github.com/d66a59b6db4e59c16efd4c42ad411f8e.git

@@ -24,4 +24,28 @@ To github.com:kamamile-tea/WebAppsLabs.git
 [1m[7m%[27m[1m[0m                                                                                                    ]7;file://Kamilles-Air/Users/kamilletipan/Downloads/WebAppsLabs/lab2[0m[27m[24m[Jkamilletipan@Kamilles-Air lab2 % [K[?2004hrreadme    r  aatom readme[?2004l
 [1m[7m%[27m[1m[0m                                                                                                    ]7;file://Kamilles-Air/Users/kamilletipan/Downloads/WebAppsLabs/lab2[0m[27m[24m[Jkamilletipan@Kamilles-Air lab2 % [K[?2004hnnotepad[?2004l
 zsh: command not found: notepad
-[1m[7m%[27m[1m[0m                                                                                                    ]7;file://Kamilles-Air/Users/kamilletipan/Downloads/WebAppsLabs/lab2[0m[27m[24m[Jkamilletipan@Kamilles-Air lab2 % [K[?2004hnotepad 
+[1m[7m%[27m[1m[0m                                                                                                    ]7;file://Kamilles-Air/Users/kamilletipan/Downloads/WebAppsLabs/lab2[0m[27m[24m[Jkamilletipan@Kamilles-Air lab2 % [K[?2004hnotepad      n  nnotes    n  ggit add .[?2004l
+[1m[7m%[27m[1m[0m                                                                                                    ]7;file://Kamilles-Air/Users/kamilletipan/Downloads/WebAppsLabs/lab2[0m[27m[24m[Jkamilletipan@Kamilles-Air lab2 % [K[?2004hggit p git o    commit - m "updatesd  d readme instructu ions"[?2004l
+[main b8c5b04] updated readme instructions
+ 2 files changed, 23 insertions(+), 5 deletions(-)
+[1m[7m%[27m[1m[0m                                                                                                    ]7;file://Kamilles-Air/Users/kamilletipan/Downloads/WebAppsLabs/lab2[0m[27m[24m[Jkamilletipan@Kamilles-Air lab2 % [K[?2004hgit commit -m "updated readme instructions"[39Dadd .                                  [34D[9Dnotepa[2C git add .commit -m "updated readme instructions"[43D                                           [43Dggit push[?2004l
+Enumerating objects: 9, done.
+Counting objects:  11% (1/9)Counting objects:  22% (2/9)Counting objects:  33% (3/9)Counting objects:  44% (4/9)Counting objects:  55% (5/9)Counting objects:  66% (6/9)Counting objects:  77% (7/9)Counting objects:  88% (8/9)Counting objects: 100% (9/9)Counting objects: 100% (9/9), done.
+Delta compression using up to 4 threads
+Compressing objects:  20% (1/5)Compressing objects:  40% (2/5)Compressing objects:  60% (3/5)Compressing objects:  80% (4/5)Compressing objects: 100% (5/5)Compressing objects: 100% (5/5), done.
+Writing objects:  20% (1/5)Writing objects:  40% (2/5)Writing objects:  60% (3/5)Writing objects:  80% (4/5)Writing objects: 100% (5/5)Writing objects: 100% (5/5), 1.87 KiB | 956.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas:   0% (0/2)[Kremote: Resolving deltas:  50% (1/2)[Kremote: Resolving deltas: 100% (2/2)[Kremote: Resolving deltas: 100% (2/2), completed with 2 local objects.[K
+To github.com:kamamile-tea/WebAppsLabs.git
+   5c33d04..b8c5b04  main -> main
+[1m[7m%[27m[1m[0m                                                                                                    ]7;file://Kamilles-Air/Users/kamilletipan/Downloads/WebAppsLabs/lab2[0m[27m[24m[Jkamilletipan@Kamilles-Air lab2 % [K[?2004hrrm readme readme.md[?2004l
+rm: readme.md: No such file or directory
+[1m[7m%[27m[1m[0m                                                                                                    ]7;file://Kamilles-Air/Users/kamilletipan/Downloads/WebAppsLabs/lab2[0m[27m[24m[Jkamilletipan@Kamilles-Air lab2 % [K[?2004hrm readme readme.md[?2004l
+rm: readme: No such file or directory
+rm: readme.md: No such file or directory
+[1m[7m%[27m[1m[0m                                                                                                    ]7;file://Kamilles-Air/Users/kamilletipan/Downloads/WebAppsLabs/lab2[0m[27m[24m[Jkamilletipan@Kamilles-Air lab2 % [K[?2004hlls[?2004l
+cars.db			data_dictionary.md	extract2.csv		makefile
+cars.sql		extract1.csv		lab_data		typescript
+[1m[7m%[27m[1m[0m                                                                                                    ]7;file://Kamilles-Air/Users/kamilletipan/Downloads/WebAppsLabs/lab2[0m[27m[24m[Jkamilletipan@Kamilles-Air lab2 % [K[?2004httouch readme.md[?2004l
+[1m[7m%[27m[1m[0m                                                                                                    ]7;file://Kamilles-Air/Users/kamilletipan/Downloads/WebAppsLabs/lab2[0m[27m[24m[Jkamilletipan@Kamilles-Air lab2 % [K[?2004haatom readme.md[1m [0m[0m [?2004l
+[1m[7m%[27m[1m[0m                                                                                                    ]7;file://Kamilles-Air/Users/kamilletipan/Downloads/WebAppsLabs/lab2[0m[27m[24m[Jkamilletipan@Kamilles-Air lab2 % [K[?2004h

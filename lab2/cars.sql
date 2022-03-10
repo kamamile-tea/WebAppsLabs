@@ -60,3 +60,31 @@ UPDATE extract1 SET ranking = rowid;
 .output extract1.csv
 SELECT * FROM extract1;
 .output stdout
+
+.mode csv
+.headers ON
+.output extract2.csv
+select * from extract1 where make='Subaru' order by total desc limit 3;
+.headers OFF
+select * from extract1 where make='Honda' order by total desc limit 3;
+select * from extract1 where make='Toyota' order by total desc limit 3;
+select * from extract1 where make='Acura' order by total desc limit 3;
+select * from extract1 where make='Audi' order by total desc limit 3;
+select * from extract1 where make='Bmw' order by total desc limit 3;
+select * from extract1 where make='Chevy' order by total desc limit 3;
+select * from extract1 where make='Chrystler' order by total desc limit 3;
+select * from extract1 where make='Dodge' order by total desc limit 3;
+select * from extract1 where make='Ford' order by total desc limit 3;
+
+select * from extract1 where make='Hyundai' order by total desc limit 3;
+select * from extract1 where make='Infiniti' order by total desc limit 3;
+select * from extract1 where make='Jeep' order by total desc limit 3;
+select * from extract1 where make='Lexus' order by total desc limit 3;
+select * from extract1 where make='Mazda' order by total desc limit 3;
+select * from extract1 where make='Mercedes' order by total desc limit 3;
+select * from extract1 where make='Mitsu' order by total desc limit 3;
+select * from extract1 where make='Nissan' order by total desc limit 3;
+select * from extract1 where make='Scion' order by total desc limit 3;
+select * from extract1 where make='Volkswagen' order by total desc limit 3;
+select * from extract1 where make='Volvo' order by total desc limit 3;
+.output stdout

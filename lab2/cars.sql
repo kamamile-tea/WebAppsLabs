@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS Car_Score AS SELECT Car_ID,Racer_Turbo,
 FROM original;
 
 
-
+-- Problem 2 part 1
 CREATE TABLE IF NOT EXISTS extract1 AS SELECT car_id,year,make,model,(
 	Racer_Turbo+
 	Racer_Supercharged+Racer_Performance+Racer_Horsepower+
@@ -61,6 +61,7 @@ UPDATE extract1 SET ranking = rowid;
 SELECT * FROM extract1;
 .output stdout
 
+-- Problem 2 part 2
 .mode csv
 .headers ON
 .output extract2.csv
@@ -88,3 +89,20 @@ select * from extract1 where make='Scion' order by total desc limit 3;
 select * from extract1 where make='Volkswagen' order by total desc limit 3;
 select * from extract1 where make='Volvo' order by total desc limit 3;
 .output stdout
+
+
+--Problem 3
+.headers on
+.mode columns
+.print Problem 3 fields
+-- count
+select judge_name,count(judge_name) AS cars_judged from judges group by judge_name;
+
+-- start
+select min(timestamp) from original AS the_start;
+
+-- end
+select max(timestamp) from original AS the_end;
+
+--average
+SELECT (MAX(timestamp)-MIN(timestamp)) / count(judge_name) FROM original AS the_avg;

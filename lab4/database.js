@@ -9,9 +9,10 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
   }
   else {
     console.log('Connected to the SQLite database.')
-    db.run('DROP TABLE IF EXISTS example;')
-    db.run('CREATE TABLE IF NOT EXISTS example(name TEXT);')
-    db.run('INSERT INTO example VALUES("kami");')
+    db.run('DROP TABLE IF EXISTS Cars;')
+    db.run('DROP TABLE IF EXISTS original;')
+    db.run('CREATE TABLE IF NOT EXISTS Cars(name TEXT);')
+    // db.run('INSERT INTO example VALUES("kami");')
   }
 })
 

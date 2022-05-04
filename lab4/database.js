@@ -6,7 +6,7 @@ const DBSOURCE = 'cars.db'
 let inFile = './data/data.csv'
 let outFile = 'origin.json'
 
-csvToJson.fieldDelimiter(',').generateJsonFileFromCsv(inFile, outFile)
+// csvToJson.fieldDelimiter(',').generateJsonFileFromCsv(inFile, outFile)
 
 let db = new sqlite3.Database(DBSOURCE, (err) => {
   if (err) {

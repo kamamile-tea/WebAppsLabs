@@ -4,8 +4,10 @@ const db = require('./database.js')
 
 const port = 3000
 
-app.get('/doAthing', (req, res, next) => {
-  var sql = 'select * from cars'
+// Displays everything in the cars table.
+// I chose to omit the points such as 'Mods_Rims' as I found them clunky and overwhelmig in the visual display
+app.get('/api/cars', (req, res) => {
+  var sql = 'SELECT * FROM cars'
   db.all(sql, [], (err, rows) => {
     if (err) {
       res.status(400).json({ error: err.message })
@@ -19,8 +21,25 @@ app.get('/doAthing', (req, res, next) => {
   })
 })
 
+// Displays a specific row given an id input
+app.get('/api/cars/:id', (req, res) => {
+  var sql = 'SELECT * FROM cars WHERE Car_id == ' + req.params.id + ';'
+  db.all(sql, [], (err, rows) => {
+    if (err) {
+      res.status(400).json({ error: err.message })
+    }
+    else {
+      res.json({
+        message: 'success',
+        data: rows
+      })
+    }
+  })
+})
+
+// default page
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Welcome to cars')
 })
 
 app.listen(port, () => {

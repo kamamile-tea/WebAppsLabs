@@ -4,7 +4,6 @@
 DROP TABLE IF EXISTS Judges;
 DROP TABLE IF EXISTS Cars;
 DROP TABLE IF EXISTS original;
-DROP TABLE IF EXISTS extract1;
 .headers off
 .mode csv
 .import data/data.csv original

@@ -40,32 +40,60 @@ app.get('/api/cars/:id', (req, res) => {
   })
 })
 
-// Displays a specific row given an id input
+// Adds a car to the database
 app.post('/api/cars', (req, res) => {
-  let carid = req.body.carid
-  let year = req.body.year
-  let make = req.body.make
-  let model = req.body.model
-  let email = req.body.email
-  let timestamp = req.body.timestamp
+  const carid = req.body.carid
+  const year = req.body.year
+  const make = req.body.make
+  const model = req.body.model
+  const email = req.body.email
+  const timestamp = req.body.timestamp
 
-  var sql = 'INSERT INTO cars VALUES( '
-  + carid + ', '
-  + year + ', '
-  + make + ', '
-  + model + ', '
-  + email + ', '
+  var sql = 'INSERT INTO cars VALUES( "'
+  + carid + '", "'
+  + year + '", "'
+  + make + '", "'
+  + model + '", "'
+  + email + '", "'
   + timestamp
-  + ' );'
+  + '" );'
 
-  db.all(sql, [], (err, rows) => {
+  db.all(sql, [], (err) => {
     if (err) {
       res.status(400).json({ error: err.message })
     }
     else {
       res.json({
-        message: 'Added succesfully',
-        data: rows
+        message: 'Added succesfully'
+      })
+    }
+  })
+})
+
+// Updates rows based on given input
+app.put('/api/cars', (req, res) => {
+  const newCarid = req.body.carid
+  const newYear = req.body.year
+  const newMake = req.body.make
+  const newModel = req.body.model
+  const newEmail = req.body.email
+  const newTimestamp = req.body.timestamp
+
+  const sql = 'UPDATE cars SET Car_id = "' +
+            newCarid + '", Year = "' +
+            newYear + '", Make = "' +
+            newMake + '", Model = "' +
+            newModel + '", Email = "' +
+            newEmail + '", Timestamp = "' +
+            newTimestamp + '" WHERE Car_id == "' + newCarid + '";'
+
+  db.all(sql, [], (err, row) => {
+    if (err) {
+      res.status(400).json({ error: err.message })
+    }
+    else {
+      res.json({
+        message: 'Updated succesfully'
       })
     }
   })

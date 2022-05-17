@@ -1,11 +1,14 @@
 const express = require('express')
 const app = express()
 const db = require('./database.js')
+var cors = require('cors')
 
-const port = 3000
+const port = 9000
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+
+app.use(cors())
 
 // Displays everything in the cars table.
 // I chose to omit the points such as 'Mods_Rims' as I found them clunky and overwhelmig in the visual display

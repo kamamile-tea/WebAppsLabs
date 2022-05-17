@@ -15,6 +15,9 @@ const operators = ['==', '<', '>']
 function App() {
   const [apiResponse, setApiResponse] = useState({});
   const [displayTable, setDisplayTable] = useState(false);
+  const [colSelection, setColSelection] = useState("");
+  const [operSelection, setOperSelection] = useState("");
+  const [query, setQuery] = useState("");
 
   let displayAll = () => {
       fetch("http://localhost:9000/api/cars")
@@ -26,6 +29,33 @@ function App() {
           })
   };
 
+  let displayQuery = () => {
+    fetch("http://localhost:9000/api/cars/" + colSelection + "/" + operSelection + "/" + query)
+        .then(response => response.json())
+        .then(response => setApiResponse(response))
+        .then(response => {
+          setDisplayTable(true);
+          console.log(apiResponse);
+        })
+  }
+
+  let handleColChange = (col) => {
+    console.log("Handle Col Change: ");
+    console.log(col);
+    setColSelection(col);
+  }
+
+  let handleOperChange = (oper) => {
+    console.log("Handle Oper Change: ");
+    console.log(oper);
+    setOperSelection(oper);
+  }
+
+  let handleQueryChange = (e) => {
+    console.log("Handle Query Change: ");
+    console.log(e.target.value);
+    setQuery(e.target.value);
+  }
 
   return (
     <div className="App">
@@ -35,15 +65,13 @@ function App() {
 
         <p>Or Display where </p>
 
-        <SelectionList options = { columns } title = "Column Name" />
+        <SelectionList onSelectionChange = {handleColChange} options = { columns } title = "Column Name" />
 
-        <p>Or Display where </p>
+        <SelectionList onSelectionChange = {handleOperChange} options = { operators } title = "Operator"/>
 
-        <SelectionList options = { operators } title = "Operator"/>
+        <TextField onChange = {handleQueryChange} color = "secondary" id="standard-basic" label="Type here" variant="outlined" helperText = "Enter your query here" />
 
-        <TextField color = "secondary" id="standard-basic" label="Type here" variant="outlined" helperText = "Enter your query here" />
-
-        <Button href = "#" variant="contained">Display your query</Button>
+        <Button href = "#" variant="contained" onClick = {displayQuery}>Display your query</Button>
       </header>
       <section>
         {displayTable ? <Table rows = {apiResponse.data}/> : <p></p>}

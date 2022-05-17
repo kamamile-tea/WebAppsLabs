@@ -24,6 +24,7 @@ export default function NestedList(props) {
   const updateSelection = (choice) => {
     console.log(choice);
     setSelection(choice);
+    props.onSelectionChange(choice);
     handleClick();
   };
 

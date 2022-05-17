@@ -28,8 +28,8 @@ app.get('/api/cars', (req, res) => {
 })
 
 // Displays a specific row given an id input
-app.get('/api/cars/:id', (req, res) => {
-  var sql = 'SELECT * FROM cars WHERE Car_id == ' + req.params.id + ';'
+app.get('/api/cars/:col/:oper/:query', (req, res) => {
+  var sql = 'SELECT * FROM cars WHERE ' + req.params.col + req.params.oper + '"' + req.params.query + '";'
   db.all(sql, [], (err, rows) => {
     if (err) {
       res.status(400).json({ error: err.message })

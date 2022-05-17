@@ -13,10 +13,18 @@ import ExpandMore from '@mui/icons-material/ExpandMore';
 import StarBorder from '@mui/icons-material/StarBorder';
 
 export default function NestedList(props) {
+  const selectionLabel = props.title;
   const [open, setOpen] = React.useState(false);
+  const [selection, setSelection] = React.useState(selectionLabel);
 
   const handleClick = () => {
     setOpen(!open);
+  };
+
+  const updateSelection = (choice) => {
+    console.log(choice);
+    setSelection(choice);
+    handleClick();
   };
 
   return (
@@ -27,14 +35,14 @@ export default function NestedList(props) {
     >
       <ListItemButton onClick={handleClick}>
       {console.log(props.options)}
-        <ListItemText primary= {props.title} />
+        <ListItemText primary= { selection } />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
             {props.options.map((choice, index) => (
-              <ListItemButton sx={{ pl: 4 }} key = {index}>
-                <ListItemText primary = {choice} />
+              <ListItemButton value = {choice} sx={{ pl: 4 }} key = {index} onClick = {(e) => updateSelection(e.target.textContent)}>
+                <ListItemText value = {choice} primary = {choice} />
               </ListItemButton>
             ))}
         </List>

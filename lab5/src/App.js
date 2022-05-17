@@ -9,28 +9,29 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import SelectionList from './components/SelectionList.js'
 
-const columns = ['money', 'when', 'of', 'course'];
+const columns = ['Car_id', 'Year', 'Make', 'Model', 'Email', 'Timestamp'];
 const operators = ['==', '<', '>']
 
 function App() {
   const [apiResponse, setApiResponse] = useState({});
+  const [displayTable, setDisplayTable] = useState(false);
 
-  let callAPI = () => {
+  let displayAll = () => {
       fetch("http://localhost:9000/api/cars")
           .then(response => response.json())
-          .then(response => setApiResponse(response));
+          .then(response => setApiResponse(response))
+          .then(response => {
+            setDisplayTable(true);
+            console.log(apiResponse);
+          })
   };
 
-  useEffect(() => {    callAPI();  });
 
   return (
     <div className="App">
       <ResponsiveAppBar/>
-      <section>
-        <p> { JSON.stringify(apiResponse.data[0])} </p>
-      </section>
       <header className="App-header">
-        <Button href = "#" variant="contained">Display All</Button>
+        <Button href = "#" variant="contained" onClick = {displayAll}>Display All</Button>
 
         <p>Or Display where </p>
 
@@ -45,7 +46,7 @@ function App() {
         <Button href = "#" variant="contained">Display your query</Button>
       </header>
       <section>
-        <Table/>
+        {displayTable ? <Table rows = {apiResponse.data}/> : <p></p>}
       </section>
     </div>
   );

@@ -77,7 +77,7 @@ app.post('/api/cars', (req, res) => {
 })
 
 // Updates rows based on given input
-app.put('/api/cars', (req, res) => {
+app.put('/api/cars/:col/:oper/:query', (req, res) => {
   const newCarid = req.body.carid
   const newYear = req.body.year
   const newMake = req.body.make
@@ -91,7 +91,7 @@ app.put('/api/cars', (req, res) => {
             newMake + '", Model = "' +
             newModel + '", Email = "' +
             newEmail + '", Timestamp = "' +
-            newTimestamp + '" WHERE Car_id == "' + newCarid + '";'
+            newTimestamp + '" WHERE ' + req.params.col + ' ' + req.params.oper + ' "' + req.params.query + '";'
 
   db.all(sql, [], (err, row) => {
     if (err) {

@@ -52,6 +52,9 @@ app.post('/api/cars', (req, res) => {
   const email = req.body.email
   const timestamp = req.body.timestamp
 
+  console.log(typeof req.body.carid)
+  console.log(req.body.carid)
+
   var sql = 'INSERT INTO cars VALUES( "'
   + carid + '", "'
   + year + '", "'
